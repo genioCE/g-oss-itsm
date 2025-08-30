@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  glpi:
+    image: diouxx/glpi
+    ports: ["8088:80"]
+  snipeit:
+    image: snipe/snipe-it:latest
+    ports: ["8089:80"]
+  bookstack:
+    image: linuxserver/bookstack:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports: ["8090:80"]
